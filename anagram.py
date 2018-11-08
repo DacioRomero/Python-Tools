@@ -3,7 +3,7 @@ import sys
 import dictionary_words
 
 
-def generator(word):
+def generate(word):
     '''Generates one-word anagrams of a word.
 
     Args:
@@ -39,7 +39,7 @@ def is_anagram(word1, word2):
 
 def main():
     '''Tests generator().'''
-    print(' '.join(generator(word=sys.argv[1])))
+    print(' '.join(generate(word=sys.argv[1])))
 
 
 if __name__ == '__main__':

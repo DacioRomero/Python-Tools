@@ -13,6 +13,7 @@ def randomize_list(input_list):
         The randomly rearranged list.
     '''
     output_list = input_list[:]
+    # TODO: Write own "shuffle" function
     random.shuffle(output_list)
     return output_list
 

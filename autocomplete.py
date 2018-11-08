@@ -16,7 +16,7 @@ def fuzzy_startswith(string, prefix):
     return string.upper().startswith(prefix.upper())
 
 
-def autocomplete(part):
+def autocomplete(part, dictionary):
     '''Creates list of words that finish the provided word.
 
     Args:
@@ -27,7 +27,7 @@ def autocomplete(part):
     '''
     possibilities = []
 
-    for dict_word in dictionary_words.get_dictionary():
+    for dict_word in dictionary:
         if fuzzy_startswith(dict_word, part):
             possibilities.append(dict_word)
 
@@ -36,7 +36,9 @@ def autocomplete(part):
 
 def main():
     '''Tests autocomplete().'''
-    print('\n'.join(autocomplete(part=sys.argv[1])))
+    part = sys.argv[1]
+    dictionary = dictionary_words.get_dictionary()
+    print('\n'.join(autocomplete(part, dictionary)))
 
 
 if __name__ == '__main__':

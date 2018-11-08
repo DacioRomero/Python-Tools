@@ -1,11 +1,39 @@
 '''Generates a histogram of the frequency of words in a text.'''
 import re
+import sample
 
 # Matches latin-esque words
 WORD_RE = re.compile(r'[a-zA-Z]+(?:\'[a-z]+)?')
 
 
-def generate_histogram_dict(seq):
+def dict_sample(the_histogram):
+    '''Gets a random, weighted sample from a histogram.
+
+    Args:
+        the_histogram: The histogram dict to draw from.
+
+    Returns:
+        A random key from the_histogram based on its weight.
+    '''
+    # https://stackoverflow.com/a/4019648/10336544
+    # Convert dictionary to tuples of keys and values.
+    return sample.random_choice(*zip(*the_histogram.items()))
+
+def dict_samples(the_histogram, k=1):
+    '''Gets random, weighted samples from a histogram.
+
+    Args:
+        the_histogram: The histogram dict to draw from.
+
+    Returns:
+        A list of random keys from the_histogram based on their weights.
+    '''
+    # https://stackoverflow.com/a/4019648/10336544
+    # Convert dictionary to tuples of keys and values and pass as arguments
+    return sample.random_choices(*zip(*the_histogram.items()), k=k)
+
+
+def dict_generate(seq):
     '''Generates a histogram of a string.
 
     Args:
@@ -30,7 +58,7 @@ def generate_histogram_dict(seq):
     return histogram
 
 
-def generate_histogram_ll(seq):
+def generate_ll(seq):
     '''Generates a histogram of a string.
 
     Args:
@@ -57,7 +85,7 @@ def generate_histogram_ll(seq):
     return histogram
 
 
-def generate_histogram_lt(seq):
+def generate_lt(seq):
     '''Generates a histogram of a string.
 
     Args:
@@ -117,11 +145,11 @@ def unique_words(histogram):
 
 
 def main():
-    '''Tests generate_histogram_dict() and unique_words().'''
+    '''Tests dict_generate() and unique_words().'''
     with open('./texts/test.txt') as file:
         my_text = file.read()
 
-    my_histogram = generate_histogram_dict(my_text)
+    my_histogram = dict_generate(my_text)
     my_unique_words = unique_words(my_histogram)
 
     print(my_histogram)

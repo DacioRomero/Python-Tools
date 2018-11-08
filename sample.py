@@ -3,32 +3,6 @@ import random
 import sys
 import histogram
 
-def histogram_sample(the_histogram):
-    '''Gets a random, weighted sample from a histogram.
-
-    Args:
-        the_histogram: The histogram dict to draw from.
-
-    Returns:
-        A random key from the_histogram based on its weight.
-    '''
-    # https://stackoverflow.com/a/4019648/10336544
-    # Convert dictionary to tuples of keys and values.
-    return random_choice(*zip(*the_histogram.items()))
-
-def histogram_samples(the_histogram, k=1):
-    '''Gets random, weighted samples from a histogram.
-
-    Args:
-        the_histogram: The histogram dict to draw from.
-
-    Returns:
-        A list of random keys from the_histogram based on their weights.
-    '''
-    # https://stackoverflow.com/a/4019648/10336544
-    # Convert dictionary to tuples of keys and values and pass as arguments
-    return random_choices(*zip(*the_histogram.items()), k=k)
-
 def random_choices(seq, weights=None, cum_weights=None, k=1):
     '''Picks a weighted random choice from a histogram.
 
