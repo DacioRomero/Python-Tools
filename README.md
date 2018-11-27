@@ -1,2 +1,4 @@
 # Python Tools
-These tools are now **DEPRECATED**. Go to [the new repo](https://github.com/DacioRomero/CS-1.2/tree/master/Code)
+This repository is now **NO LONGER MAINTAINED**.
+
+All new code is at the [new repository](https://github.com/DacioRomero/CS-1.2/tree/master/Code)
