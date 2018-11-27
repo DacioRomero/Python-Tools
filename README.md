@@ -1,2 +1,2 @@
-# Tweet Generator
-Tweet Generator project for [@MakeSchool](https://github.com/MakeSchool)'s CS 1.2 Class
+# Python Tools
+These tools are now **DEPRECATED**. Go to [the new repo](https://github.com/DacioRomero/CS-1.2/tree/master/Code)
