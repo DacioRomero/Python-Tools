@@ -6,6 +6,7 @@ import sample
 WORD_RE = re.compile(r'[a-zA-Z]+(?:\'[a-z]+)?')
 
 
+# TODO: Move to sample.py
 def dict_sample(the_histogram):
     '''Gets a random, weighted sample from a histogram.
 
@@ -18,6 +19,7 @@ def dict_sample(the_histogram):
     # https://stackoverflow.com/a/4019648/10336544
     # Convert dictionary to tuples of keys and values.
     return sample.random_choice(*zip(*the_histogram.items()))
+
 
 def dict_samples(the_histogram, k=1):
     '''Gets random, weighted samples from a histogram.
@@ -33,6 +35,7 @@ def dict_samples(the_histogram, k=1):
     return sample.random_choices(*zip(*the_histogram.items()), k=k)
 
 
+# TODO: Separate different histograms into classes
 def dict_generate(seq):
     '''Generates a histogram of a string.
 
@@ -119,6 +122,7 @@ def generate_lt(seq):
     return histogram
 
 
+# TODO: Separate into another file
 def get_words(text):
     '''Gets the words in a text.
 
